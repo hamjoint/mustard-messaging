@@ -110,6 +110,26 @@ class Message extends NonSequentialIdModel
     }
 
     /**
+     * Relationship to the children messages.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
+        return $this->hasMany('\Hamjoint\Mustard\Message', 'parent_message_id');
+    }
+
+    /**
+     * Relationship to the parent message.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parent()
+    {
+        return $this->belongsTo('\Hamjoint\Mustard\Message', 'parent_message_id');
+    }
+
+    /**
      * Relationship to the receiving user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
