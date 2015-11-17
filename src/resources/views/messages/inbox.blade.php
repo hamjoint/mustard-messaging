@@ -6,10 +6,10 @@
 
 @section('content')
 <div class="row">
-    <div class="medium-3 columns">
+    <div class="medium-3 large-2 columns">
         @include('mustard::messages.nav')
     </div>
-    <div class="medium-9 columns">
+    <div class="medium-9 large-10 columns">
         <div class="row">
             <div class="medium-12 columns">
                 <form method="post" action="/messages/manage">
