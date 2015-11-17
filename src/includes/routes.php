@@ -34,5 +34,5 @@ Route::group([
     Route::post('messages/send', ['uses' => 'MessagingController@postSend']);
     Route::post('messages/manage', ['uses' => 'MessagingController@postManage']);
 
-    Route::post('admin/messages', ['uses' => 'AdminController@getMessages']);
+    Route::get('admin/messages', ['uses' => 'AdminController@getMessages']);
 });
