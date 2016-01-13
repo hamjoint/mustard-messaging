@@ -93,7 +93,7 @@ class MessagingController extends Controller
         $acquaintances = Auth::user()->getAcquaintances();
 
         if ($acquaintances->isEmpty()) {
-            return redirect()->to('/account/contacts')->withMessage("Your contacts list is empty.");
+            return redirect()->to('/account/contacts')->withStatus("Your contacts list is empty.");
         }
 
         return view('mustard::messages.compose', [
@@ -174,7 +174,7 @@ class MessagingController extends Controller
 
         $sent_copy->save();
 
-        return redirect()->back()->withMessage("Message sent to {$recipient->username}.");
+        return redirect()->back()->withStatus("Message sent to {$recipient->username}.");
     }
 
     /**
