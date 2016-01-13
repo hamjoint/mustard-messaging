@@ -33,10 +33,10 @@ class AdminMessages extends Table
      */
     public $columnHeaders = [
         'Message ID' => 'message_id',
-        'Subject' => 'subject',
-        'Recipient' => 'recipient',
-        'Sender' => 'sender',
-        'Sent' => 'sent',
+        'Subject'    => 'subject',
+        'Recipient'  => 'recipient',
+        'Sender'     => 'sender',
+        'Sent'       => 'sent',
     ];
 
     /**

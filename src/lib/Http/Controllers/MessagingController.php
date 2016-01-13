@@ -93,19 +93,20 @@ class MessagingController extends Controller
         $acquaintances = Auth::user()->getAcquaintances();
 
         if ($acquaintances->isEmpty()) {
-            return redirect()->to('/account/contacts')->withStatus("Your contacts list is empty.");
+            return redirect()->to('/account/contacts')->withStatus('Your contacts list is empty.');
         }
 
         return view('mustard::messages.compose', [
             'acquaintances' => $acquaintances->sortBy('username', SORT_NATURAL | SORT_FLAG_CASE),
-            'message' => new Message,
+            'message'       => new Message(),
         ]);
     }
 
     /**
      * Return the messaging compose reply view.
      *
-     * @param integer $messageId
+     * @param int $messageId
+     *
      * @return \Illuminate\View\View
      */
     public function getReply($messageId)
@@ -118,7 +119,8 @@ class MessagingController extends Controller
     /**
      * Return the messaging message view.
      *
-     * @param integer $messageId
+     * @param int $messageId
+     *
      * @return \Illuminate\View\View
      */
     public function getView($messageId)
@@ -138,11 +140,12 @@ class MessagingController extends Controller
      * Send a message.
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postSend(Request $request)
     {
-        $message = new Message;
+        $message = new Message();
 
         $message->subject = $request->input('subject');
         $message->body = $request->input('body');
@@ -181,6 +184,7 @@ class MessagingController extends Controller
      * Manage message flags.
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postManage(Request $request)

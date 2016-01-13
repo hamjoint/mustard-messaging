@@ -52,20 +52,21 @@ class Message extends NonSequentialIdModel
     }
 
     /**
-     * Override the parent's url attribute
+     * Override the parent's url attribute.
      *
      * @return string
      */
     public function getUrlAttribute()
     {
-        return '/messages/view/' . $this->getKey();
+        return '/messages/view/'.$this->getKey();
     }
 
     /**
      * Scope of sent messages.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $query
+     * @param string                                $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSent($query)
@@ -77,7 +78,8 @@ class Message extends NonSequentialIdModel
      * Scope of received messages.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $query
+     * @param string                                $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeReceived($query)
@@ -89,7 +91,8 @@ class Message extends NonSequentialIdModel
      * Scope of unread messages.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $query
+     * @param string                                $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeUnread($query)
@@ -101,7 +104,8 @@ class Message extends NonSequentialIdModel
      * Scope of read messages.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $query
+     * @param string                                $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeRead($query)

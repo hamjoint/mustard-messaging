@@ -19,8 +19,8 @@ along with Mustard.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class MustardMessagingTables extends Migration
 {
@@ -31,8 +31,7 @@ class MustardMessagingTables extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function(Blueprint $table)
-        {
+        Schema::create('messages', function (Blueprint $table) {
             $table->integer('message_id', true)->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('sender_user_id')->unsigned();
