@@ -24,7 +24,6 @@ namespace Hamjoint\Mustard\Messaging\Http\Controllers;
 use Hamjoint\Mustard\Http\Controllers\Controller;
 use Hamjoint\Mustard\Messaging\Message;
 use Hamjoint\Mustard\Messaging\Tables\AdminMessages;
-use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -44,7 +43,7 @@ class AdminController extends Controller
         }
 
         return view('mustard::admin.messages', [
-            'table' => $table,
+            'table'    => $table,
             'messages' => $table->paginate(),
         ]);
     }
